@@ -13,7 +13,10 @@ object vers {
     }
 }
 
-kotlin{
+group = "tz.co.asoft"
+version = "1.0.0"
+
+kotlin {
     universalLib()
     sourceSets {
         val commonMain by getting {

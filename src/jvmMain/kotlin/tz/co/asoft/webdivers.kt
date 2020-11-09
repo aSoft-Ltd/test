@@ -1,4 +1,4 @@
-package tz.co.asoft.test
+package tz.co.asoft
 
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.chrome.ChromeDriver

@@ -66,7 +66,7 @@ kotlin {
 val nexusUsername = System.getenv("ASOFT_NEXUS_USERNAME") ?: "null" //"P0ZW8VYf"
 val nexusPassword = System.getenv("ASOFT_NEXUS_PASSWORD") ?: "null" //"bhbdCSvPlI0Y9OidU8uLxx205/XWJTEMeCQhKE+T3I1B"
 val pgpPrivateKey = System.getenv("ASOFT_MAVEN_PGP_PRIVATE_KEY") ?: ""
-val pgpPassword = System.getenv("ASOFT_MAVEN_PGP_PASSWORD")
+val pgpPassword = System.getenv("ASOFT_MAVEN_PGP_PASSWORD") ?: ""
 
 nexusStaging {
     username = nexusUsername

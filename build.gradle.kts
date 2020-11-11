@@ -1,6 +1,8 @@
 plugins {
     id("tz.co.asoft.gradle-plugin.lib-multiplatform")
     id("tz.co.asoft.gradle-plugin.lib-android")
+    id("io.codearte.nexus-staging") version ("0.22.0")
+    signing
 }
 
 object vers {
@@ -14,7 +16,15 @@ object vers {
 }
 
 group = "tz.co.asoft"
-version = "1.0.0"
+version = "1.0.1"
+description = "A Multiplatform testing library"
+url = "https://github.com/aSoft-Ltd/test"
+scmConnection = "scm:git:git://github.com/aSoft-Ltd/test.git"
+scmDeveloperConnection = "scm:git:https://github.com/aSoft-Ltd/test.git"
+licenseName = "MIT License"
+licenseUrl = "https://github.com/aSoft-Ltd/test/blob/master/LICENSE"
+developerId = "andylamax"
+developerName = "Anderson Lameck"
 
 kotlin {
     universalLib()
@@ -50,5 +60,23 @@ kotlin {
                 api(kotlin("test-js"))
             }
         }
+    }
+}
+
+val nexusUsername = System.getenv("ASOFT_NEXUS_USERNAME") ?: "null" //"P0ZW8VYf"
+val nexusPassword = System.getenv("ASOFT_NEXUS_PASSWORD") ?: "null" //"bhbdCSvPlI0Y9OidU8uLxx205/XWJTEMeCQhKE+T3I1B"
+val pgpPrivateKey = System.getenv("ASOFT_MAVEN_PGP_PRIVATE_KEY") ?: ""
+val pgpPassword = System.getenv("ASOFT_MAVEN_PGP_PASSWORD")
+
+nexusStaging {
+    username = nexusUsername
+    password = nexusPassword
+}
+
+configureSigning(privateKey = pgpPrivateKey, password = pgpPassword)
+
+configurePublishing {
+    repositories {
+        configureMavenCentralRepos(username = nexusUsername, password = nexusPassword)
     }
 }

@@ -1,6 +1,7 @@
 plugins {
-    id("tz.co.asoft.gradle-plugin.lib-multiplatform")
-    id("tz.co.asoft.gradle-plugin.lib-android")
+    id("com.android.library") version "4.1.0"
+    kotlin("multiplatform") version "1.4.10"
+    id("tz.co.asoft.library")
     id("io.codearte.nexus-staging") version ("0.22.0")
     signing
 }

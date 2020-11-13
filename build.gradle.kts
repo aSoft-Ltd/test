@@ -1,10 +1,14 @@
 plugins {
-    id("tz.co.asoft.gradle-plugin.lib-multiplatform")
-    id("tz.co.asoft.gradle-plugin.lib-android")
+    id("com.android.library") version "4.1.0"
+    kotlin("multiplatform") version "1.4.10"
+    id("tz.co.asoft.library") version "0.0.7"
+    id("io.codearte.nexus-staging") version "0.22.0"
+    signing
 }
 
 object vers {
     val selenium = "4.0.0-alpha-6"
+    val asoft_test = "1.0.1"
 
     object androidx {
         val espresso = "3.1.0"
@@ -12,9 +16,6 @@ object vers {
         val test_rules = "1.1.0"
     }
 }
-
-group = "tz.co.asoft"
-version = "1.0.0"
 
 kotlin {
     universalLib()
@@ -52,3 +53,8 @@ kotlin {
         }
     }
 }
+
+aSoftLibrary(
+    version = vers.asoft_test,
+    description = "A Multiplatform testing library"
+)

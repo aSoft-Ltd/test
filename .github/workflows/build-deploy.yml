@@ -27,8 +27,9 @@ jobs:
             ${{ runner.os }}-gradle-
       - name: Print nexus credentials
         run: |
-          echo "ASOFT_NEXUS_USERNAME=$(ASOFT_NEXUS_USERNAME)"
-          echo "ASOFT_NEXUS_PASSWORD=$(ASOFT_NEXUS_PASSWORD)"
+          echo "ASOFT_NEXUS_USERNAME=$ASOFT_NEXUS_USERNAME"
+          echo "ASOFT_NEXUS_PASSWORD=$ASOFT_NEXUS_PASSWORD"
+          printenv
       - name: Making gradlew executable
         run: chmod +x ./gradlew
         working-directory: .

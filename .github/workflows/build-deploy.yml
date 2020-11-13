@@ -4,14 +4,15 @@ on:
   push:
     branches: [ master ]
 
+env:
+  ASOFT_MAVEN_PGP_PRIVATE_KEY: ${{ secrets.ASOFT_MAVEN_PGP_PRIVATE_KEY }}
+  ASOFT_MAVEN_PGP_PASSWORD: ${{ secrets.ASOFT_MAVEN_PGP_PASSWORD }}
+  ASOFT_NEXUS_PASSWORD: ${{ secrets.ASOFT_NEXUS_PASSWORD }}
+  ASOFT_NEXUS_USERNAME: ${{ secrets.ASOFT_NEXUS_USERNAME }}
+
 jobs:
   deploy-lib-to-maven-central:
     runs-on: ubuntu-latest
-    env:
-      ASOFT_MAVEN_PGP_PRIVATE_KEY: ${{ secrets.ASOFT_MAVEN_PGP_PRIVATE_KEY }}
-      ASOFT_MAVEN_PGP_PASSWORD: ${{ secrets.ASOFT_MAVEN_PGP_PASSWORD }}
-      ASOFT_NEXUS_PASSWORD: ${{ secrets.ASOFT_NEXUS_PASSWORD }}
-      ASOFT_NEXUS_USER: ${{ secrets.ASOFT_NEXUS_USER }}
     steps:
       - uses: actions/checkout@v2
       - name: Set up JDK 1.8
@@ -25,11 +26,6 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
-      - name: Print nexus credentials
-        run: |
-          echo "ASOFT_NEXUS_USERNAME=$ASOFT_NEXUS_USERNAME"
-          echo "ASOFT_NEXUS_PASSWORD=$ASOFT_NEXUS_PASSWORD"
-          printenv
       - name: Making gradlew executable
         run: chmod +x ./gradlew
         working-directory: .

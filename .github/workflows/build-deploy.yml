@@ -4,37 +4,15 @@ on:
   push:
     branches: [ master ]
 
-env:
-  ASOFT_MAVEN_PGP_PRIVATE_KEY: ${{ secrets.ASOFT_MAVEN_PGP_PRIVATE_KEY }}
-  ASOFT_MAVEN_PGP_PASSWORD: ${{ secrets.ASOFT_MAVEN_PGP_PASSWORD }}
-  ASOFT_NEXUS_PASSWORD: ${{ secrets.ASOFT_NEXUS_PASSWORD }}
-  ASOFT_NEXUS_USER: ${{ secrets.ASOFT_NEXUS_USER }}
-
 jobs:
-  build-lib:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Set up JDK 1.8
-        uses: actions/setup-java@v1
-        with:
-          java-version: 1.8
-      - name: Cache Gradle
-        uses: actions/cache@v2
-        with:
-          path: ~/.gradle/caches
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-
-      - name: Building test
-        run: |
-          chmod +x ./gradlew
-          ./gradlew build
-        working-directory: .
-
   deploy-lib-to-maven-central:
     runs-on: ubuntu-latest
     needs: build-lib
+    env:
+      ASOFT_MAVEN_PGP_PRIVATE_KEY: ${{ secrets.ASOFT_MAVEN_PGP_PRIVATE_KEY }}
+      ASOFT_MAVEN_PGP_PASSWORD: ${{ secrets.ASOFT_MAVEN_PGP_PASSWORD }}
+      ASOFT_NEXUS_PASSWORD: ${{ secrets.ASOFT_NEXUS_PASSWORD }}
+      ASOFT_NEXUS_USER: ${{ secrets.ASOFT_NEXUS_USER }}
     steps:
       - uses: actions/checkout@v2
       - name: Set up JDK 1.8
@@ -48,22 +26,19 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
+      - name: Print nexus credentials
+        run: |
+          echo "ASOFT_NEXUS_USERNAME=$(ASOFT_NEXUS_USERNAME)"
+          echo "ASOFT_NEXUS_PASSWORD=$(ASOFT_NEXUS_PASSWORD)"
       - name: Making gradlew executable
         run: chmod +x ./gradlew
         working-directory: .
+      - name: Building the lib
+        run: ./gradlew build
+        working-directory: .
       - name: Publishing to sonatype nexus
-        env:
-          ASOFT_MAVEN_PGP_PRIVATE_KEY: ${{ secrets.ASOFT_MAVEN_PGP_PRIVATE_KEY }}
-          ASOFT_MAVEN_PGP_PASSWORD: ${{ secrets.ASOFT_MAVEN_PGP_PASSWORD }}
-          ASOFT_NEXUS_PASSWORD: ${{ secrets.ASOFT_NEXUS_PASSWORD }}
-          ASOFT_NEXUS_USER: ${{ secrets.ASOFT_NEXUS_USER }}
         run: ./gradlew publish
         working-directory: .
       - name: Closing And Releasing Repository
-        env:
-          ASOFT_MAVEN_PGP_PRIVATE_KEY: ${{ secrets.ASOFT_MAVEN_PGP_PRIVATE_KEY }}
-          ASOFT_MAVEN_PGP_PASSWORD: ${{ secrets.ASOFT_MAVEN_PGP_PASSWORD }}
-          ASOFT_NEXUS_PASSWORD: ${{ secrets.ASOFT_NEXUS_PASSWORD }}
-          ASOFT_NEXUS_USER: ${{ secrets.ASOFT_NEXUS_USER }}
         run: ./gradlew closeAndReleaseRepository
         working-directory: .

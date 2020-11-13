@@ -51,9 +51,19 @@ jobs:
       - name: Making gradlew executable
         run: chmod +x ./gradlew
         working-directory: .
-      - name: Publishing to maven central
+      - name: Publishing to sonatype nexus
+        env:
+          ASOFT_MAVEN_PGP_PRIVATE_KEY: ${{ secrets.ASOFT_MAVEN_PGP_PRIVATE_KEY }}
+          ASOFT_MAVEN_PGP_PASSWORD: ${{ secrets.ASOFT_MAVEN_PGP_PASSWORD }}
+          ASOFT_NEXUS_PASSWORD: ${{ secrets.ASOFT_NEXUS_PASSWORD }}
+          ASOFT_NEXUS_USER: ${{ secrets.ASOFT_NEXUS_USER }}
         run: ./gradlew publish
         working-directory: .
       - name: Closing And Releasing Repository
+        env:
+          ASOFT_MAVEN_PGP_PRIVATE_KEY: ${{ secrets.ASOFT_MAVEN_PGP_PRIVATE_KEY }}
+          ASOFT_MAVEN_PGP_PASSWORD: ${{ secrets.ASOFT_MAVEN_PGP_PASSWORD }}
+          ASOFT_NEXUS_PASSWORD: ${{ secrets.ASOFT_NEXUS_PASSWORD }}
+          ASOFT_NEXUS_USER: ${{ secrets.ASOFT_NEXUS_USER }}
         run: ./gradlew closeAndReleaseRepository
         working-directory: .

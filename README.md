@@ -1,9 +1,5 @@
 # Test
-![badge][badge-maven]
-![badge][badge-mpp]
-![badge][badge-android]
-![badge][badge-js]
-![badge][badge-jvm]
+![badge][badge-maven] ![badge][badge-mpp] ![badge][badge-android] ![badge][badge-js] ![badge][badge-jvm]
 
 An Opinionated testing library for kotlin multiplatform
 It supports

@@ -1,7 +1,10 @@
+![badge][badge-ci]
+![badge][badge-maven]
+![badge][badge-mpp]
 ![badge][badge-android]
 ![badge][badge-js]
 ![badge][badge-jvm]
-# test
+# Test
 An Opinionated testing library for kotlin multiplatform
 It supports
 - Kotlin Multiplatform libraries
@@ -24,7 +27,7 @@ In your testing code, you can do the following
 ```
 
 ## Setup:Gradle
-Configuring a library becomes as easy as just
+Adding test as a dependency becomes as easy as just
 ### Kotlin Multiplatform
 ```kotlin
 kotlin {
@@ -54,3 +57,9 @@ kotlin {
     }
 }
 ```
+[badge-ci]: https://github.com/aSoft-Ltd/test/workflows/PR/badge.svg
+[badge-maven]: https://img.shields.io/maven-central/v/tz.co.asoft/test/1.0.1?style=for-the-badge
+[badge-mpp]: https://img.shields.io/badge/kotlin-multiplatform-blue?style=for-the-badge
+[badge-android]: http://img.shields.io/badge/platform-android-brightgreen.svg?style=for-the-badge
+[badge-js]: http://img.shields.io/badge/platform-js-yellow.svg?style=for-the-badge
+[badge-jvm]: http://img.shields.io/badge/platform-jvm-orange.svg?style=for-the-badge

@@ -1,10 +1,9 @@
-![badge][badge-ci]
+# Test
 ![badge][badge-maven]
 ![badge][badge-mpp]
 ![badge][badge-android]
 ![badge][badge-js]
 ![badge][badge-jvm]
-# Test
 An Opinionated testing library for kotlin multiplatform
 It supports
 - Kotlin Multiplatform libraries
@@ -57,9 +56,8 @@ kotlin {
     }
 }
 ```
-[badge-ci]: https://github.com/aSoft-Ltd/test/workflows/PR/badge.svg
-[badge-maven]: https://img.shields.io/maven-central/v/tz.co.asoft/test/1.0.1?style=for-the-badge
-[badge-mpp]: https://img.shields.io/badge/kotlin-multiplatform-blue?style=for-the-badge
-[badge-android]: http://img.shields.io/badge/platform-android-brightgreen.svg?style=for-the-badge
-[badge-js]: http://img.shields.io/badge/platform-js-yellow.svg?style=for-the-badge
-[badge-jvm]: http://img.shields.io/badge/platform-jvm-orange.svg?style=for-the-badge
+[badge-maven]: https://img.shields.io/maven-central/v/tz.co.asoft/test/1.0.1?style=flat
+[badge-mpp]: https://img.shields.io/badge/kotlin-multiplatform-blue?style=flat
+[badge-android]: http://img.shields.io/badge/platform-android-brightgreen.svg?style=flat
+[badge-js]: http://img.shields.io/badge/platform-js-yellow.svg?style=flat
+[badge-jvm]: http://img.shields.io/badge/platform-jvm-orange.svg?style=flat

@@ -8,9 +8,7 @@ actual fun asyncTest(block: suspend () -> Unit) = GlobalScope.promise {
 }.unsafeCast<dynamic>()
 
 actual abstract class AsyncTest actual constructor() : CoroutineScope {
-
-    actual override val coroutineContext: CoroutineContext = Dispatchers.Default
-
+    actual override val coroutineContext: CoroutineContext = SupervisorJob()
     actual fun asyncTest(block: suspend () -> Unit) = promise {
         block()
     }.unsafeCast<Unit>()

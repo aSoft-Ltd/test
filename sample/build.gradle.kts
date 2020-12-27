@@ -1,10 +1,6 @@
 plugins {
-    kotlin("multiplatform") version "1.4.10"
-}
-
-repositories {
-    mavenCentral()
-    jcenter()
+    kotlin("multiplatform")
+    id("tz.co.asoft.library")
 }
 
 group = "tz.co.asoft.tests"
@@ -24,7 +20,7 @@ kotlin {
     sourceSets {
         val commonTest by getting {
             dependencies {
-                implementation("tz.co.asoft:test:+")
+                implementation(project(":test-coroutines"))
             }
         }
     }

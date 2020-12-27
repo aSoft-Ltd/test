@@ -1,18 +1,11 @@
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.SupervisorJob
-import tz.co.asoft.AsyncTest
+import tz.co.asoft.asyncTest
 import tz.co.asoft.delayForFun
-import kotlin.coroutines.CoroutineContext
-import kotlin.js.JsName
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class AsyncClassTest : AsyncTest() {
-    override val coroutineContext: CoroutineContext = Dispatchers.Main + SupervisorJob()
-
+class AsyncClassTest {
     @Test
-    @JsName("Test0")
-    fun `should test a suspend function with no problem`() = asyncTest {
+    fun should_test_a_suspend_function_with_no_problem() = asyncTest {
         delayForFun()
         assertEquals(Unit, Unit)
     }

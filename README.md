@@ -15,8 +15,7 @@ Ever wanted to test suspending functions from common code without hack's? This i
 In your testing code, you can do the following
 ```kotlin
     @Test
-    @JsName("Test0") // If targeting javascript
-    fun `should test a suspend function with no problem`() = asyncTest {
+    fun `should_test_a_suspend_function_with_no_problem`() = asyncTest {
         delayForFun()
         // do suspending tasks here and perform assertions on the results
     }
@@ -31,7 +30,7 @@ kotlin {
     sourceSets {
         val commonTest by getting {
             dependencies {
-                implementation("tz.co.asoft:test:+") // please use the latest version possible
+                implementation("tz.co.asoft:test-coroutines:+") // please use the latest version possible
             }        
         }
     }
@@ -42,14 +41,14 @@ kotlin {
 kotlin {
     // . . .
     dependencies {
-        implementationTest("tz.co.asoft:test:+") // please use the latest version possible
+        implementationTest("tz.co.asoft:test-coroutines:+") // please use the latest version possible
         /* Or
          * You can be as specific as
          * tz.co.asoft:test-android:+
          * tz.co.asoft:test-js:+
          * tz.co.asoft:test-jvm:+
         */
-        implementationTest("tz.co.asoft:test-android:+") // please use the latest version possible
+        implementationTest("tz.co.asoft:test-coroutines-android:+") // please use the latest version possible
     }
 }
 ```

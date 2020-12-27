@@ -6,8 +6,7 @@ import kotlin.test.assertEquals
 
 class SuspendingFunctionTest {
     @Test
-    @JsName("Test0")
-    fun `should test a suspend function with no problem`() = asyncTest {
+    fun should_test_a_suspend_function_with_no_problem() = asyncTest {
         delayForFun()
         assertEquals(Unit, Unit)
     }

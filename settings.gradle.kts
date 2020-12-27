@@ -14,4 +14,10 @@ pluginManagement {
         }
     }
 }
+
 rootProject.name = "test"
+
+include(":test-core")
+include(":test-coroutines")
+include(":test-selenium")
+include(":sample")

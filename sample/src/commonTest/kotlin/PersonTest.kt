@@ -5,8 +5,7 @@ import kotlin.test.assertEquals
 
 class PersonTest {
     @Test
-    @JsName("test1")
-    fun `should construct class person with no problem`() {
+    fun should_construct_class_person_with_no_problem() {
         assertEquals(Person("John"), Person("John"))
     }
 }

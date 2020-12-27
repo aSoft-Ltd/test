@@ -2,7 +2,7 @@ name: Build Lib
 
 on:
   pull_request:
-    branches: [ master ]
+    branches: [ master-dev ]
 
 jobs:
   build-lib:
@@ -21,7 +21,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-      - name: Building test
+      - name: Building library
         run: |
           chmod +x ./gradlew
           ./gradlew build

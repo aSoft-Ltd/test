@@ -29,12 +29,15 @@ jobs:
       - name: Making gradlew executable
         run: chmod +x ./gradlew
         working-directory: .
-      - name: Building the lib
-        run: ./gradlew build
+      - name: Publishing test-core to sonatype nexus
+        run: ./gradlew :test-core:publish
         working-directory: .
-      - name: Publishing to sonatype nexus
-        run: ./gradlew publish
+      - name: Publishing test-coroutines to sonatype nexus
+        run: ./gradlew :test-coroutines:publish
+        working-directory: .
+      - name: Publishing test-selenium to sonatype nexus
+        run: ./gradlew :test-selenium:publish
         working-directory: .
       - name: Closing And Releasing Repository
-        run: ./gradlew closeAndReleaseRepository
+        run: ./gradlew :test-core:closeAndReleaseRepository
         working-directory: .

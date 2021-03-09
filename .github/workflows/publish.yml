@@ -1,4 +1,4 @@
-name: Build & Deploy
+name: Publish
 
 on:
   push:
@@ -9,10 +9,11 @@ env:
   ASOFT_MAVEN_PGP_PASSWORD: ${{ secrets.ASOFT_MAVEN_PGP_PASSWORD }}
   ASOFT_NEXUS_PASSWORD: ${{ secrets.ASOFT_NEXUS_PASSWORD }}
   ASOFT_NEXUS_USERNAME: ${{ secrets.ASOFT_NEXUS_USERNAME }}
+  MACHINE: mac
 
 jobs:
-  deploy-lib-to-maven-central:
-    runs-on: ubuntu-latest
+  publish-project:
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
       - name: Set up JDK 1.8
@@ -29,15 +30,9 @@ jobs:
       - name: Making gradlew executable
         run: chmod +x ./gradlew
         working-directory: .
-      - name: Publishing test-core to sonatype nexus
-        run: ./gradlew :test-core:publish
+      - name: publishing
+        run: ./gradlew publish
         working-directory: .
-      - name: Publishing test-coroutines to sonatype nexus
-        run: ./gradlew :test-coroutines:publish
-        working-directory: .
-      - name: Publishing test-selenium to sonatype nexus
-        run: ./gradlew :test-selenium:publish
-        working-directory: .
-      - name: Closing And Releasing Repository
+      - name: Closing and Releasing Repositories
         run: ./gradlew :test-core:closeAndReleaseRepository
         working-directory: .

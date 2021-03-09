@@ -1,3 +1,6 @@
+# 1.1.20 : 2021-02-09
+- Supported native testing
+
 # 1.1.10 : 2020.12.29
 - Changed signature of async test
 - added tests to `test-coroutines`

@@ -1,5 +1,5 @@
-import tz.co.asoft.asyncTest
-import tz.co.asoft.delayForFun
+import test.asyncTest
+import test.delayForFun
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

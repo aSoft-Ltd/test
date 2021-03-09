@@ -1,5 +1,4 @@
-import tz.co.asoft.Person
-import kotlin.js.JsName
+import test.Person
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

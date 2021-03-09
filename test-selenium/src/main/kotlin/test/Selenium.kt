@@ -1,4 +1,4 @@
-package tz.co.asoft
+package test
 
 import kotlinx.coroutines.delay
 import org.openqa.selenium.*

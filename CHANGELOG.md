@@ -2,6 +2,7 @@
 
 - Supported native testing
 - Bumped gradle to 6.8.1 from 6.7.1
+- changed package name from tz.co.asoft to test
 
 # 1.1.10 : 2020.12.29
 

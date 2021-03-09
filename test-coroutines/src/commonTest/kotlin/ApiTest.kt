@@ -1,5 +1,5 @@
 import kotlinx.coroutines.delay
-import tz.co.asoft.asyncTest
+import test.asyncTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

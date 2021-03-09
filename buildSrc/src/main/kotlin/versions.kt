@@ -5,8 +5,8 @@ object vers {
     val selenium = "4.0.0-alpha-6"
 
     object asoft {
-        val builders = "1.2.0"
-        val test = "1.1.10"
+        val builders = "1.3.0"
+        val test = "1.1.20"
     }
 
     object androidx {

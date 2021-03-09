@@ -3,6 +3,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.promise
 import tz.co.asoft.asyncTest
 import kotlin.js.Promise
+import kotlin.test.Ignore
 import kotlin.test.Test
 
 class PromiseTestingTest {
@@ -21,6 +22,7 @@ class PromiseTestingTest {
     }
 
     @Test
+    @Ignore
     fun should_wait_till_natural_promise_completes() = asyncTest {
         promise.then {
             console.log("got: $it")

@@ -1,7 +1,7 @@
 import kotlinx.browser.window
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.promise
-import tz.co.asoft.asyncTest
+import test.asyncTest
 import kotlin.js.Promise
 import kotlin.test.Ignore
 import kotlin.test.Test

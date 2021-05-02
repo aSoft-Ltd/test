@@ -1,3 +1,3 @@
 package test
 
-const val environment = "test"
+const val ENVIRONMENT = "test"

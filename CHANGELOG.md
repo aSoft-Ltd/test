@@ -1,3 +1,8 @@
+# 1.1.30 : 2021-05-02
+
+- Supported kotlin 1.5.0
+- Upgraded builders from 1.3.0 to 1.3.30
+
 # 1.1.20 : 2021-02-09
 
 - Supported native testing

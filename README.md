@@ -32,7 +32,7 @@ kotlin {
     sourceSets {
         val commonTest by getting {
             dependencies {
-                implementation("tz.co.asoft:test-coroutines:1.1.20") // please use the latest version possible
+                implementation("tz.co.asoft:test-coroutines:1.1.30") // please use the latest version possible
             }
         }
     }
@@ -45,7 +45,7 @@ kotlin {
 kotlin {
     // . . .
     dependencies {
-        implementationTest("tz.co.asoft:test-coroutines:1.1.20") // please use the latest version possible
+        implementationTest("tz.co.asoft:test-coroutines:1.1.30") // please use the latest version possible
         /* Or
          * You can be as specific as
          * tz.co.asoft:test-js:+
@@ -55,7 +55,7 @@ kotlin {
 }
 ```
 
-[badge-maven]: https://img.shields.io/maven-central/v/tz.co.asoft/test-core/1.1.20?style=flat
+[badge-maven]: https://img.shields.io/maven-central/v/tz.co.asoft/test-core/1.1.30?style=flat
 
 [badge-mpp]: https://img.shields.io/badge/kotlin-multiplatform-blue?style=flat
 

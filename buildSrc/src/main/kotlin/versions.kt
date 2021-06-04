@@ -1,5 +1,4 @@
 object vers {
-    val agp = "4.2.0"
     val kotlin = "1.5.10"
     val nexus_staging = "0.22.0"
     val selenium = "4.0.0-alpha-6"

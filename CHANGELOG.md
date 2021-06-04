@@ -1,3 +1,8 @@
+# 1.1.31 : 2021-06-04
+
+- Upgraded from kotlin 1.5.0 to 1.5.10
+- Added native tests in samples
+
 # 1.1.30 : 2021-05-02
 
 - Supported kotlin 1.5.0

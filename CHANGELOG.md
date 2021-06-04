@@ -1,3 +1,7 @@
+# 1.1.32 : 2021-06-05
+
+- Added java 16 support
+
 # 1.1.31 : 2021-06-04
 
 - Upgraded from kotlin 1.5.0 to 1.5.10

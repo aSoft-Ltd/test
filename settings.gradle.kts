@@ -1,7 +1,6 @@
 pluginManagement {
     repositories {
         google()
-        jcenter()
         gradlePluginPortal()
         mavenCentral()
     }
@@ -20,4 +19,5 @@ rootProject.name = "test"
 include(":test-core")
 include(":test-coroutines")
 include(":test-selenium")
+include(":test-logging-android")
 include(":sample")

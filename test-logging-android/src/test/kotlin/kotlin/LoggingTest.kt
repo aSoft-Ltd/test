@@ -1,5 +1,5 @@
 import android.util.Log
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 class LoggingTest {
     @Test

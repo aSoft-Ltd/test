@@ -6,11 +6,7 @@ plugins {
 }
 
 kotlin {
-    target {
-        compilations.all {
-            kotlinOptions.useIR = true
-        }
-    }
+    target { library() }
     sourceSets {
         val main by getting {
             dependencies {

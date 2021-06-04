@@ -1,17 +1,11 @@
 plugins {
-    id("com.android.library")
     kotlin("multiplatform")
     id("tz.co.asoft.library")
     id("io.codearte.nexus-staging")
     signing
 }
 
-android {
-    configureAndroid("src/androidMain")
-}
-
 kotlin {
-    android { library() }
     jvm { library() }
     js(IR) { library() }
     val darwinTargets = listOf(
@@ -35,15 +29,6 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 api(kotlin("test"))
-            }
-        }
-
-        val androidMain by getting {
-            dependencies {
-                api(kotlin("test-junit5"))
-                api("androidx.test.espresso:espresso-core:${vers.androidx.espresso}")
-                api("androidx.test:runner:${vers.androidx.test_runner}")
-                api("androidx.test:rules:${vers.androidx.test_rules}")
             }
         }
 

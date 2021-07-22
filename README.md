@@ -44,7 +44,7 @@ kotlin {
 ```kotlin
 kotlin {
     // . . .
-    dependencies {
+    dependencies {  
         implementationTest("tz.co.asoft:test-coroutines:1.1.32") // please use the latest version possible
         /* Or
          * You can be as specific as

@@ -8,6 +8,11 @@ An Opinionated testing library for kotlin multiplatform
 
 Ever wanted to test suspending functions from common code without hack's? This is your spot
 
+## Compatibility
+| Kotlin Version | Test Version | Coroutines Version |
+|----------------|--------------|--------------------|
+| 1.5.10         | 1.1.40       | 1.5.0-native-mt    |
+
 ## Samples
 
 In your testing code, you can do the following
@@ -44,7 +49,7 @@ kotlin {
 ```kotlin
 kotlin {
     // . . .
-    dependencies {
+    dependencies {  
         implementationTest("tz.co.asoft:test-coroutines:1.1.32") // please use the latest version possible
         /* Or
          * You can be as specific as

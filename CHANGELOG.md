@@ -1,3 +1,8 @@
+# 1.1.40 : 2021-08-02
+
+- Reverted to kotlin 1.5.10
+- Reverted to coroutines 1.5.0-native-mt
+
 # 1.1.33 : 2021-07-22
 
 - Upgraded coroutines from 1.5.0 to 1.5.1-native-mt

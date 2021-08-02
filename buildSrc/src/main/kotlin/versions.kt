@@ -8,7 +8,7 @@ object vers {
     }
 
     object asoft {
-        val test = "1.1.34"
+        val test = "1.1.40"
         val builders = "1.3.42"
     }
 }

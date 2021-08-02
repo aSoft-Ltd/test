@@ -4,11 +4,11 @@ object vers {
     val selenium = "4.0.0-alpha-6"
 
     object kotlinx {
-        val coroutines = "1.5.0"
+        val coroutines = "1.5.0-native-mt"
     }
 
     object asoft {
-        val test = "1.1.32"
-        val builders = "1.3.30"
+        val test = "1.1.40"
+        val builders = "1.3.42"
     }
 }

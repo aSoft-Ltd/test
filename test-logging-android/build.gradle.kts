@@ -8,9 +8,6 @@ plugins {
 kotlin {
     target {
         library()
-        tasks.withType<Test> {
-            useJUnitPlatform()
-        }
     }
     sourceSets {
         val main by getting {

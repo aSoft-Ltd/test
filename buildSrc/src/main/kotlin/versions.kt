@@ -1,5 +1,5 @@
 object vers {
-    val kotlin = "1.5.20"
+    val kotlin = "1.5.10"
     val nexus_staging = "0.22.0"
     val selenium = "4.0.0-alpha-6"
 
@@ -8,7 +8,7 @@ object vers {
     }
 
     object asoft {
-        val test = "1.1.33"
-        val builders = "1.3.30"
+        val test = "1.1.34"
+        val builders = "1.3.42"
     }
 }

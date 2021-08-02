@@ -4,7 +4,7 @@ object vers {
     val selenium = "4.0.0-alpha-6"
 
     object kotlinx {
-        val coroutines = "1.5.1-native-mt"
+        val coroutines = "1.5.0-native-mt"
     }
 
     object asoft {

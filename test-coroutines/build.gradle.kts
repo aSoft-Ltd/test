@@ -45,6 +45,7 @@ kotlin {
 
             val test by target.compilations.getting {
                 defaultSourceSet {
+                    dependsOn(main.defaultSourceSet)
                     dependsOn(commonTest)
                 }
             }
